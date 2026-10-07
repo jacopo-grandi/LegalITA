@@ -80,7 +80,10 @@ def clean_exported_answer(text: str) -> str:
 
 
 def load_external_outputs(csv_path: Path) -> pd.DataFrame:
-    df = pd.read_csv(csv_path, encoding="utf-8-sig")
+    # Gli export supportati possono essere separati da virgola o punto e
+    # virgola. Il motore Python usa csv.Sniffer e gestisce anche risposte
+    # quotate su piu' righe senza imporre al chiamante un formato specifico.
+    df = pd.read_csv(csv_path, encoding="utf-8-sig", sep=None, engine="python")
 
     required = {"Domanda", "Risposte"}
     missing = required - set(df.columns)

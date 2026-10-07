@@ -241,5 +241,16 @@ BUILDER_TEMPERATURE: float = 0.0
 # Include eventuali thinking/reasoning tokens per i modelli che li espongono.
 MODEL_MAX_TOKENS: int = int(os.environ.get("MODEL_MAX_TOKENS", "16000"))
 
+# GPT-6 puo' consumare una quota significativa del budget in reasoning tokens
+# non visibili. Manteniamo un override dedicato per non cambiare il budget dei
+# modelli legacy; 32K lascia piu' del margine iniziale di 25K raccomandato da
+# OpenAI per reasoning + output.
+OPENAI_GPT6_MAX_OUTPUT_TOKENS: int = int(
+    os.environ.get(
+        "OPENAI_GPT6_MAX_OUTPUT_TOKENS",
+        os.environ.get("OPENAI_GPT6_MAX_COMPLETION_TOKENS", "32000"),
+    )
+)
+
 # Numero massimo di tentativi per query a un modello sotto esame.
 MODEL_RETRIES: int = 3
