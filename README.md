@@ -1,6 +1,12 @@
-<p align="center">
-  <img src="docs/assets/legalita-banner.png" alt="LegalITA" width="600">
-</p>
+```text
+█     █████  ███   ███  █     ███ █████  ███
+█░    █░░░░░█ ░░░ █ ░░█ █░     █░░ ░█░░░█ ░░█
+█░░   ████░░█░ ██░█████░█░░    █░░░ █░░░█████░
+█░░   █░░░░ █░░ █░█░░░█░█░░    █░░  █░░ █░░░█░░
+█████ █████░ ███ ░█░░░█░█████ ███░  █░░ █░░░█░░
+ ░░░░░ ░░░░░  ░░░ ░░░  ░░░░░░░ ░░░   ░░  ░░  ░░
+  ░░░░░ ░░░░░  ░░░  ░   ░ ░░░░░ ░░░   ░   ░   ░
+```
 
 LegalITA is a benchmark for evaluating language models on Italian case-law
 reasoning tasks. It includes criterion-based legal evaluation, adversarial Missing
