@@ -3,7 +3,7 @@ Layer condiviso di interrogazione dei modelli sotto esame.
 
 Contiene gli adapter provider (Anthropic, OpenAI, Gemini via endpoint
 OpenAI-compatibile, Novita) e il ciclo di retry con backoff esponenziale
-usati da run_benchmark.py e run_bullshit_v2.py. I runner mantengono nel
+usati da legalita-benchmark e legalita-mdd. I runner mantengono nel
 proprio namespace gli alias storici (_query_anthropic, ...) e il routing
 per prefisso, cosi' i test possono sostituire i singoli adapter sul modulo
 runner senza conoscere questo layer.

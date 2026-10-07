@@ -30,7 +30,19 @@ RESULTS_DIR = ROOT_DIR / "results"
 ARTIFACTS_DIR = ROOT_DIR / "artifacts"
 
 # Current benchmark/gold defaults.
-BULLSHIT_GOLD_PATH = PRIVATE_DIR / "bullshit_tasks_v3_missing_documents_40.json"
+# Gold MDD (Missing Document Detection): il file distribuito si chiama ancora
+# bullshit_tasks_...; se presente, il nome nuovo mdd_tasks_... ha la precedenza.
+MDD_GOLD_PATH = next(
+    (
+        path
+        for path in (
+            PRIVATE_DIR / "mdd_tasks_v3_missing_documents_40.json",
+            PRIVATE_DIR / "bullshit_tasks_v3_missing_documents_40.json",
+        )
+        if path.exists()
+    ),
+    PRIVATE_DIR / "bullshit_tasks_v3_missing_documents_40.json",
+)
 
 CORPUS_ZIP = RAW_DIR / "sentenze.zip"
 CORPUS_JSONL = PROCESSED_DIR / "corpus.jsonl"

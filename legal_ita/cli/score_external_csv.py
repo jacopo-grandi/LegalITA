@@ -4,8 +4,8 @@ sui task esistenti del benchmark, senza interrogare nuovamente un modello
 sotto esame.
 
 Uso:
-    python score_external_csv_v2.py --csv "Benchmark v3 - NEXTOS.csv" --model-name NEXTOS
-    python score_external_csv_v2.py --csv "Benchmark v3 - NEXTOS.csv" --model-name NEXTOS --judge claude-sonnet-4-6
+    legalita-score-csv --csv "Benchmark v3 - NEXTOS.csv" --model-name NEXTOS
+    legalita-score-csv --csv "Benchmark v3 - NEXTOS.csv" --model-name NEXTOS --judge claude-sonnet-4-6
 """
 
 import argparse
@@ -262,7 +262,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--judge",
         type=str,
         default=JUDGE_MODEL,
-        help="Alias legacy per il modello del Judge A (default: valore in config.py).",
+        help="Alias legacy per il modello del Judge A (default: legal_ita/config.py).",
     )
     parser.add_argument("--judge-strategy", choices=["single", "adaptive_majority"], default=None)
     parser.add_argument("--judge-a-provider", choices=["anthropic", "openai"], default=None)
