@@ -1,8 +1,10 @@
-# LegalITA
+<p align="center">
+  <img src="docs/assets/legalita-banner.png" alt="LegalITA" width="600">
+</p>
 
 LegalITA is a benchmark for evaluating language models on Italian case-law
-reasoning tasks. It includes criterion-based legal evaluation, adversarial
-false-premise evaluation and a reproducible local citation-grounding pipeline.
+reasoning tasks. It includes criterion-based legal evaluation, adversarial Missing
+Document Detection (MDD) and a reproducible local citation-grounding pipeline.
 
 Citation grounding runs entirely on local files: a versioned SQLite registry
 of ECLI identifiers and one question profile per task, supplied as a separate
